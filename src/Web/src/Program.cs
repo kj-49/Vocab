@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Vocab.Core.Features.Identity.Users;
 using Vocab.Core.Features.Identity.Roles;
 using Vocab.Web.Helper;
+using Vocab.Core.Features;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddIdentityServices(builder.Configuration);
+builder.Services.AddFeatureServices();
 
 var app = builder.Build();
 
