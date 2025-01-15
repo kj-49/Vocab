@@ -16,9 +16,5 @@ public class SentenceConfiguration : IEntityTypeConfiguration<Sentence>
         builder.HasOne(u => u.Word)
             .WithMany()
             .HasForeignKey(u => u.WordId);
-
-        builder.HasOne(u => u.Language)
-            .WithMany()
-            .HasForeignKey(u => u.LanguageId);
     }
 }

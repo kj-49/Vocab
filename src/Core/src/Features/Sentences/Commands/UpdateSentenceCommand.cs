@@ -9,6 +9,5 @@ public record UpdateSentenceCommand
 {
     public required Guid Id { get; init; }
     public required Guid WordId { get; init; }
-    public required Guid LanguageId { get; init; }
     public required string SentenceText { get; init; }
 }

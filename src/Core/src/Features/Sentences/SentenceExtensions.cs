@@ -13,14 +13,12 @@ public static class SentenceExtensions
         return new Sentence
         {
             WordId = command.WordId,
-            LanguageId = command.LanguageId,
             SentenceText = command.SentenceText
         };
     }
     public static void ApplyUpdate(this Sentence entity, UpdateSentenceCommand command)
     {
         entity.WordId = command.WordId;
-        entity.LanguageId = command.LanguageId;
         entity.SentenceText = command.SentenceText;
     }
 }

@@ -12,7 +12,5 @@ public class Sentence
     public Guid Id { get; set; }
     public Guid WordId { get; set; }
     public Word Word { get; set; }
-    public Guid LanguageId { get; set; }
-    public Language Language { get; set; }
     public string SentenceText { get; set; }
 }

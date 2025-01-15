@@ -35,8 +35,8 @@ public class SentenceService : ISentenceService
                 Id = s.Id,
                 WordId = s.WordId,
                 WordText = s.Word.Text,
-                LanguageId = s.LanguageId,
-                LanguageName = s.Language.Name,
+                LanguageId = s.Word.LanguageId,
+                LanguageName = s.Word.Language.Name,
                 SentenceText = s.SentenceText
             })
             .ToListAsync();
@@ -50,8 +50,8 @@ public class SentenceService : ISentenceService
                 Id = s.Id,
                 WordId = s.WordId,
                 WordText = s.Word.Text,
-                LanguageId = s.LanguageId,
-                LanguageName = s.Language.Name,
+                LanguageId = s.Word.LanguageId,
+                LanguageName = s.Word.Language.Name,
                 SentenceText = s.SentenceText
             })
             .SingleAsync(u => u.Id == id);
