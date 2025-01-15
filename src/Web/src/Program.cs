@@ -21,7 +21,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         .UseNpgsql(builder.Configuration.GetConnectionString("Default"))
         .UseSnakeCaseNamingConvention();
 });
-builder.Services.AddIdentityServices();
+
+builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
 
