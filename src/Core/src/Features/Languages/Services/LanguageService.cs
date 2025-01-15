@@ -18,13 +18,13 @@ public class LanguageService : ILanguageService
         _context = context;
     }
 
-    public Task CreateAsync(CreateLanguageCommand command)
+    public async Task CreateAsync(CreateLanguageCommand command)
     {
         var entity = command.ToEntity();
 
-        _context.Languages.Add(entity);
+        await _context.Languages.AddAsync(entity);
 
-        return _context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
     }
 
     public async Task<ICollection<LanguageDto>> GetAllAsync()
