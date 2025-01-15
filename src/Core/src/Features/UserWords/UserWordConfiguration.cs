@@ -18,7 +18,7 @@ public class UserWordConfiguration : IEntityTypeConfiguration<UserWord>
             .IsUnique();
 
         builder.HasOne(u => u.User)
-            .WithMany()
+            .WithMany(u => u.UserWords)
             .HasForeignKey(u => u.UserId);
 
         builder.HasOne(u => u.Word)

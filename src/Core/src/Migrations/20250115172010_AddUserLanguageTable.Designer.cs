@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Vocab.Core.Data;
@@ -11,9 +12,11 @@ using Vocab.Core.Data;
 namespace Vocab.Core.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250115172010_AddUserLanguageTable")]
+    partial class AddUserLanguageTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -272,6 +275,10 @@ namespace Vocab.Core.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
+                    b.Property<Guid?>("AppUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("app_user_id");
+
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("date_created");
@@ -287,6 +294,9 @@ namespace Vocab.Core.Migrations
 
                     b.HasKey("Id")
                         .HasName("pk_languages");
+
+                    b.HasIndex("AppUserId")
+                        .HasDatabaseName("ix_languages_app_user_id");
 
                     b.ToTable("languages", (string)null);
                 });
@@ -558,6 +568,14 @@ namespace Vocab.Core.Migrations
                         .HasConstraintName("fk_asp_net_user_tokens_asp_net_users_user_id");
                 });
 
+            modelBuilder.Entity("Vocab.Core.Features.Languages.Language", b =>
+                {
+                    b.HasOne("Vocab.Core.Features.Identity.Users.AppUser", null)
+                        .WithMany("Languages")
+                        .HasForeignKey("AppUserId")
+                        .HasConstraintName("fk_languages_users_app_user_id");
+                });
+
             modelBuilder.Entity("Vocab.Core.Features.Sentences.Sentence", b =>
                 {
                     b.HasOne("Vocab.Core.Features.Words.Word", "Word")
@@ -601,11 +619,11 @@ namespace Vocab.Core.Migrations
                         .HasConstraintName("fk_user_language_languages_language_id");
 
                     b.HasOne("Vocab.Core.Features.Identity.Users.AppUser", "User")
-                        .WithMany("UserLanguages")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_user_language_users_user_id");
+                        .HasConstraintName("fk_user_language_asp_net_users_user_id");
 
                     b.Navigation("Language");
 
@@ -615,7 +633,7 @@ namespace Vocab.Core.Migrations
             modelBuilder.Entity("Vocab.Core.Features.UserWordInfo.UserWord", b =>
                 {
                     b.HasOne("Vocab.Core.Features.Identity.Users.AppUser", "User")
-                        .WithMany("UserWords")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
@@ -656,9 +674,7 @@ namespace Vocab.Core.Migrations
 
             modelBuilder.Entity("Vocab.Core.Features.Identity.Users.AppUser", b =>
                 {
-                    b.Navigation("UserLanguages");
-
-                    b.Navigation("UserWords");
+                    b.Navigation("Languages");
                 });
 #pragma warning restore 612, 618
         }
