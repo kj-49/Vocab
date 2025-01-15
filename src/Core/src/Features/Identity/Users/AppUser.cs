@@ -6,6 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vocab.Core.Features.Identity.Users;
-public class User : IdentityUser<Guid>
+public class AppUser : IdentityUser<Guid>
 {
 }

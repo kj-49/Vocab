@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vocab.Core.Features.Identity.UserLogins;
-public class UserLoginConfiguration : IEntityTypeConfiguration<UserLogin>
+public class AppUserLoginConfiguration : IEntityTypeConfiguration<AppUserLogin>
 {
-    public void Configure(EntityTypeBuilder<UserLogin> builder)
+    public void Configure(EntityTypeBuilder<AppUserLogin> builder)
     {
         builder.ToTable("asp_net_user_logins");
     }

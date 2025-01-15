@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vocab.Core.Features.Identity.RoleClaims;
-public class RoleClaimConfiguration : IEntityTypeConfiguration<RoleClaim>
+public class AppRoleClaimConfiguration : IEntityTypeConfiguration<AppRoleClaim>
 {
-    public void Configure(EntityTypeBuilder<RoleClaim> builder)
+    public void Configure(EntityTypeBuilder<AppRoleClaim> builder)
     {
         builder.ToTable("asp_net_role_claims");
     }

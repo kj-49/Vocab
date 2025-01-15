@@ -3,6 +3,10 @@
 using Microsoft.EntityFrameworkCore;
 using Vocab.Core.Data;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Identity;
+using Vocab.Core.Features.Identity.Users;
+using Vocab.Core.Features.Identity.Roles;
+using Vocab.Web.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         .UseNpgsql(builder.Configuration.GetConnectionString("Default"))
         .UseSnakeCaseNamingConvention();
 });
+builder.Services.AddIdentityServices();
 
 var app = builder.Build();
 

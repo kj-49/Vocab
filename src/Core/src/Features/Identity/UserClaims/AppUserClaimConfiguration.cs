@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vocab.Core.Features.Identity.UserClaims;
-public class UserClaimConfiguration : IEntityTypeConfiguration<UserClaim>
+public class AppUserClaimConfiguration : IEntityTypeConfiguration<AppUserClaim>
 {
-    public void Configure(EntityTypeBuilder<UserClaim> builder)
+    public void Configure(EntityTypeBuilder<AppUserClaim> builder)
     {
         builder.ToTable("asp_net_user_claims");
     }

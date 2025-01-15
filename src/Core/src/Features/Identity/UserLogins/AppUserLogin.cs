@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vocab.Core.Features.Identity.UserRoles;
-public class UserRole : IdentityUserRole<Guid>
+namespace Vocab.Core.Features.Identity.UserLogins;
+public class AppUserLogin : IdentityUserLogin<Guid>
 {
 }

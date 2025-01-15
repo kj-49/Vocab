@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vocab.Core.Features.Identity.UserClaims;
-public class UserClaim : IdentityUserClaim<Guid>
+namespace Vocab.Core.Features.Identity.UserTokens;
+public class AppUserToken : IdentityUserToken<Guid>
 {
 }

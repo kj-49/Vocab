@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vocab.Core.Features.Identity.UserRoles;
-public class UserRoleConfiguration : IEntityTypeConfiguration<UserRole>
+public class AppUserRoleConfiguration : IEntityTypeConfiguration<AppUserRole>
 {
-    public void Configure(EntityTypeBuilder<UserRole> builder)
+    public void Configure(EntityTypeBuilder<AppUserRole> builder)
     {
         builder.ToTable("asp_net_user_roles");
     }

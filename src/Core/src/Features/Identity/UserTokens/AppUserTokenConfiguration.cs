@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vocab.Core.Features.Identity.UserTokens;
-public class UserTokenConfiguration : IEntityTypeConfiguration<UserToken>
+public class AppUserTokenConfiguration : IEntityTypeConfiguration<AppUserToken>
 {
-    public void Configure(EntityTypeBuilder<UserToken> builder)
+    public void Configure(EntityTypeBuilder<AppUserToken> builder)
     {
         builder.ToTable("asp_net_user_tokens");
     }
