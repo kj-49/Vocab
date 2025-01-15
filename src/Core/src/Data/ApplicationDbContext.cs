@@ -17,7 +17,9 @@ using Vocab.Core.Features.Identity.UserTokens;
 using Vocab.Core.Features.Languages;
 using Vocab.Core.Features.Sentences;
 using Vocab.Core.Features.Translations;
+using Vocab.Core.Features.UserWordInfo;
 using Vocab.Core.Features.Words;
+using Vocab.Core.Features.WordStrengths;
 
 namespace Vocab.Core.Data;
 public class ApplicationDbContext 
@@ -30,6 +32,8 @@ public class ApplicationDbContext
     public DbSet<Sentence> Sentences { get; set; }
     public DbSet<Translation> Translations { get; set; }
     public DbSet<Word> Words { get; set; }
+    public DbSet<WordStrength> WordStrengths { get; set; }
+    public DbSet<UserWord> UserWords { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
