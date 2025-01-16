@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 using Vocab.Core.Communication.Services;
 using Vocab.Core.Data;
 using Vocab.Core.Features;
@@ -26,6 +27,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddFeatureServices();
+
+builder.Services.AddMudServices();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
