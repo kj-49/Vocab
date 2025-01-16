@@ -2,10 +2,10 @@
 
 @using Microsoft.AspNetCore.Http.Features
 @using Microsoft.AspNetCore.Identity
-@using Vocab.Web.Data
+@using Vocab.Core.Features.Identity.Users
 
-@inject UserManager<ApplicationUser> UserManager
-@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@inject SignInManager<AppUser> SignInManager
 @inject IdentityUserAccessor UserAccessor
 @inject IdentityRedirectManager RedirectManager
 

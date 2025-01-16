@@ -3,9 +3,9 @@
 @using System.ComponentModel.DataAnnotations
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Identity
-@using Vocab.Web.Data
+@using Vocab.Core.Features.Identity.Users
 
-@inject SignInManager<ApplicationUser> SignInManager
+@inject SignInManager<AppUser> SignInManager
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
