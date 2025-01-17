@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Vocab.Web.Pages;
+namespace Vocab.Web.Admin.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;

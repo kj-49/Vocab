@@ -6,7 +6,7 @@ using Vocab.Core.Data;
 using Vocab.Core.Features.Identity.Roles;
 using Vocab.Core.Features.Identity.Users;
 
-namespace Vocab.Web.Helper;
+namespace Vocab.Web.Admin.Helper;
 
 public static class ServiceCollectionExtensions
 {

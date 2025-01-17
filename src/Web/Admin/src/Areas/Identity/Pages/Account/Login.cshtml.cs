@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Vocab.Core.Features.Identity.Users;
 
-namespace Vocab.Web.Areas.Identity.Pages.Account
+namespace Vocab.Web.Admin.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {

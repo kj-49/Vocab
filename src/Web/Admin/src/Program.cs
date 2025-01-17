@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Identity;
 using Vocab.Core.Features.Identity.Users;
 using Vocab.Core.Features.Identity.Roles;
-using Vocab.Web.Helper;
+using Vocab.Web.Admin.Helper;
 using Vocab.Core.Features;
 
 var builder = WebApplication.CreateBuilder(args);

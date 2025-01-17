@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Vocab.Core.Features.Identity.Users;
 
-namespace Vocab.Web.Areas.Identity.Pages.Account
+namespace Vocab.Web.Admin.Areas.Identity.Pages.Account
 {
     public class ConfirmEmailModel : PageModel
     {

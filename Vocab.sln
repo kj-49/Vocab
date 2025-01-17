@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{304A95CE-6BD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B8F270D1-2B9E-41DE-8E7F-D53B5B75EC77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocab.Web", "src\Web\Admin\src\Vocab.Web.csproj", "{F1F759AE-32EF-4C56-BABB-A852F887AFC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocab.Web.Admin", "src\Web\Admin\src\Vocab.Web.Admin.csproj", "{F1F759AE-32EF-4C56-BABB-A852F887AFC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

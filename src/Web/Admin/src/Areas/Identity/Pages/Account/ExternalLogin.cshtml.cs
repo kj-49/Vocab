@@ -19,7 +19,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Vocab.Core.Features.Identity.Users;
 
-namespace Vocab.Web.Areas.Identity.Pages.Account
+namespace Vocab.Web.Admin.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class ExternalLoginModel : PageModel
