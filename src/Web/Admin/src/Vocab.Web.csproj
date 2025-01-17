@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\src\Vocab.Core.csproj" />
+    <ProjectReference Include="..\..\..\Core\src\Vocab.Core.csproj" />
   </ItemGroup>
 
 </Project>
