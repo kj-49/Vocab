@@ -8,15 +8,22 @@ using Vocab.Core.Features.Identity.Users;
 using Vocab.Core.Features.Identity.Roles;
 using Vocab.Web.Admin.Helper;
 using Vocab.Core.Features;
+using Vocab.Core.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddEnvironmentVariables(prefix: "Vocab_");
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy(Permissions.AdminOrMaster, policy =>
+        policy.RequireRole(AppRoles.Admin.ToString(), AppRoles.Master.ToString())); // Allow only Master or Admin roles
+});
+
 // Add services to the container.
 builder.Services.AddRazorPages(options =>
 {
-    options.Conventions.AuthorizeFolder("/");
+    options.Conventions.AuthorizeFolder("/", Permissions.AdminOrMaster);
 });
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
