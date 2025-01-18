@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\src\Vocab.Core.csproj" />
+    <ProjectReference Include="..\..\Admin\src\Vocab.Web.Admin.csproj" />
   </ItemGroup>
 
 </Project>
