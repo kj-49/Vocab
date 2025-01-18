@@ -1,0 +1,9 @@
+{
+  "solution": {
+    "path": "..\\..\\..\\Vocab.sln",
+    "projects": [
+      "src\\Core\\src\\Vocab.Core.csproj",
+      "src\\Web\\Client\\src\\Vocab.Web.Client.csproj"
+    ]
+  }
+}
