@@ -1,7 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using Vocab.Core.Data;
+using Vocab.Core.Features;
+using Vocab.Web.Client.Helper;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddEnvironmentVariables(prefix: "Vocab_");
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options
+        .UseNpgsql(builder.Configuration.GetConnectionString("Default"))
+        .UseSnakeCaseNamingConvention();
+});
+
+builder.Services.AddIdentityServices(builder.Configuration);
+builder.Services.AddFeatureServices();
 
 var app = builder.Build();
 
